@@ -1,159 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-.card-box {
-    padding: 20px;
-    border-radius: 3px;
-    margin-bottom: 30px;
-    background-color: #fff;
-}
-.thumb-sm {
-    height: 36px;
-    width: 36px;
+.detail{
+    min-height: 100vh;
 }
 
-.task-detail .task-dates li {
-    width: 50%;
-    float: left
+body {
+  height: 100%;
+  margin: 0;
+  background: #363636;
 }
 
-.task-detail .task-tags .bootstrap-tagsinput {
-    padding: 0;
-    border: none
+.question {
+  display: flex;
+  margin-left: 0px;
+  padding-bottom: 10px;
+}
+.question span{
+  padding: auto;
+  padding-right: 8px;
 }
 
-.task-detail .assign-team a {
-    display: inline-block;
-    margin: 5px 5px 5px 0
+
+
+
+.boxes {
+  margin: auto;
+  padding: 50px;
+  background: #484848;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 80vw;
+}
+.answer{
+  padding: 4px 10px;
+  width: calc(100%/4);
+}
+ 
+.answer label{
+  font-size: 2rem;
+  color: rgb(253, 253, 253);
+  font-weight: 500;
 }
 
-.task-detail .files-list .file-box {
-    display: inline-block;
-    vertical-align: middle;
-    width: 80px;
-    padding: 2px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    background-clip: padding-box
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: #ddd;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.task-detail .files-list .file-box img {
-    line-height: 70px
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #6cc0e5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
 }
 
-.task-detail .files-list .file-box p {
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap
-}
-
-.add-new-plus {
-    height: 32px;
-    text-align: center;
-    width: 32px;
-    display: block;
-    line-height: 32px;
-    color: #98a6ad;
-    font-weight: 700;
-    background-color: #e3eaef;
-    border-radius: 50%
-}
-
-.project-sort-item .form-group {
-    margin-right: 30px
-}
-
-.project-sort-item .form-group:last-of-type {
-    margin-right: 0
-}
-
-.project-box {
-    position: relative
-}
-
-.project-box .badge {
-    position: absolute;
-    right: 20px
-}
-
-.project-box h4 {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: block;
-    width: 100%;
-    overflow: hidden
-}
-
-.project-box ul li {
-    padding-right: 30px
-}
-
-.project-box .project-members a {
-    margin: 0 0 10px -12px;
-    display: inline-block;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, .06), 0 1px 0 0 rgba(0, 0, 0, .02);
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, .06), 0 1px 0 0 rgba(0, 0, 0, .02)
-}
-
-.project-box .project-members a:first-of-type {
-    margin-left: 0
-}
-
-.company-card .company-logo {
-    float: left;
-    height: 60px;
-    width: 60px;
-    border-radius: 3px
-}
-
-.company-card .company-detail {
-    margin: 0 0 50px 75px
-}
-.text-muted {
-    color: #98a6ad!important;
-}
-
-p {
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-.bootstrap-tagsinput .label-info {
-    background-color: #02c0ce;
-    display: inline-block;
-    padding: 4px 8px;
-    font-size: 13px;
-    margin: 3px 1px;
-    border-radius: 3px;
-}
-/* .footer{
-    position: fixed;
-    bottom: 0;
-} */
-
-.group-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.likeBtn{
-    font-size: 3rem;
-    color: rgb(0, 89, 255); 
-    padding: 10px 20px;   
-    cursor: pointer;
-}
-
-.like{
-    display: none;
-}
-
-.likeBtn.active .like{
-    display: block;
-}
-
-.likeBtn.active .dislike{
-    display: none;
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

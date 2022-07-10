@@ -21,11 +21,10 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 
 //CREATE EXPRESS APP
-app.use(bodyParser.urlencoded({extended: true}))
+// app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(cookieParser())
 
-app.use('/',middlewares.getUserAndAvt)
 app.use(express.static(path.join(__dirname, 'public')));
 // cấu hình hbs
 app.engine('hbs', engine({

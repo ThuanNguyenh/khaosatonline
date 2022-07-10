@@ -1,50 +1,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <!------ Include the above in your HEAD tag ---------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="/font/fontawesome-free-6.1.1-web/css/all.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <title>login</title>
 </head>
 
 <body>
-    <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="/login" method="post">
-                            <h3 class="text-center text-info">Login</h3>
-                            <div class="form-group">
-                                <label for="email" class="text-info">Email:</label><br>
-                                <input type="text" name="email" id="email" class="form-control">
-                                <p class="showErr"></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
-                                <p>{{err}}</p>
-                            </div>
+  <div>
 
-                            <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input
-                                            id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                            </div>
-                            <div id="register-link" class="text-right">
-                                <a href="/register" class="text-info">Register here</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <div class="cotn_principal">
+      <div class="cont_centrar">
+        <div class="exit_login">
+          <a href="/"><i class="fa-solid fa-circle-xmark"></i></a>
         </div>
+        <div class="cont_login">
+          <div class="cont_info_log_sign_up">
+
+
+
+            <div class="col_md_login">
+              <div class="cont_ba_opcitiy">
+
+                <h2>LOGIN</h2>
+                <p></p>
+                <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+              </div>
+            </div>
+            <div class="col_md_sign_up">
+              <div class="cont_ba_opcitiy">
+                <h2>SIGN UP</h2>
+
+
+                <p></p>
+
+                <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="cont_back_info">
+            <div class="cont_img_back_grey">
+              <img src="https://www.gtagangwars.de/suite/images/styleLogo-6bd77433ddf78bd8477ea7306e804f677bc925d0.png"
+                alt="" />
+            </div>
+
+          </div>
+          <div class="cont_forms">
+            <div class="cont_img_back_">
+              <img src="https://www.gtagangwars.de/suite/images/styleLogo-6bd77433ddf78bd8477ea7306e804f677bc925d0.png"
+                alt="" />
+            </div>
+            <p>{{err}}</p>
+            <form method="POST" action="/login" class="cont_form_login">
+              <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons"></i></a>
+              <h2>LOGIN</h2>
+
+              <input type="email" name="email" placeholder="Email" />
+              <input type="password" name="password" placeholder="Password" />
+              <button type="submit" class="btn_login">LOGIN</button>
+            </form>
+
+            <div class="cont_form_sign_up">
+              <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons"></i></a>
+              <h2>SIGN UP</h2>
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Confirm Password" />
+              <button type="submit" class="loginBtn"
+                style="font-display: none; width: 200px; height: 40px; background-color: rgb(144, 144, 144);">SIGN
+                UP</button>
+              <div class="btn_sign_up" onclick="cambiar_sign_up()">click</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
     </div>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  </div>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 
 </html>

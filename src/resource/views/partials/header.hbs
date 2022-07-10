@@ -1,91 +1,43 @@
 <div class="header">
-   <div class="header-infor">
-      <ul>
-         <li>
-            <i class="fa-solid fa-location-dot"></i>
-            14, Doãn Uẩn, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng
-         </li>
-         <li>
-            <i class="fa-solid fa-phone"></i>
-            0916074130
-         </li>
-      </ul>
-      <ul>
-         <li><a class="icon" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-         <li><a class="icon" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-         <li><a class="icon" href="#"><i class="fa-brands fa-twitter"></i></a></li>
-      </ul>
-   </div>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-   <div class="search row">
-      <div class="col-lg-4 logo">
-         <a class="logo-img" href="#">
-            <img src="/img-video/logo.png" alt="logo">
-         </a>
-      </div>
-
-      <form class="col-lg-4 search-wrap" method="GET" action="/company/search">
-         <input name="name" type="text" class="search-input" placeholder="Tìm kiếm công ty...">
-         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form method="GET" action="#">
-
-      <div class="col-lg-4 account">
-         <ul class="account-wr">
-            {{#if userName}}
-            <li class="notifi">
-               <i class="fa-solid fa-bell"></i>
-               <span>350</span>
-            </li>
-            {{/if}}
-
-            {{#if userName}}
-            <div class="dropdown">
-               <a class=" account-item btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-
-                  {{#if avatar}}
-                  <img class="avarta" src="/img-video/{{avatar}}" alt="avarta">
-                  {{else}}
-                  <img class="avarta"
-                     src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=VEahJ2Ps3kMAX8uqwfO&_nc_ht=scontent.fdad2-1.fna&oh=00_AT-rHxUn0aY1ejPx5MbSrV2mGBtZso_3tCyoHwhcwQByjg&oe=62EE1078"
-                     alt="avarta">
-                  {{/if}}
-                  <h4 class="user-name">{{userName}}</h4>
-               </a>
-
-               <ul style="width: 100%" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="/profile/{{slug}}">Hồ sơ</a></li>
-                  <li><a class="dropdown-item" href="#">Bài viết của tôi</a></li>
-                  <li><a href="/logout" class="dropdown-item">Đăng xuất</a></li>
-               </ul>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<div id="flipkart-navbar">
+    <div class="container">
+        <div class="row row1">
+            
+        </div>
+        <div class="row row2">
+            <div class="col-sm-2">
+                <h2 style="margin:0px; float: right;"><span class="smallnav menu" onclick="openNav()">☰</span></h2>
+                <h1 style="margin:0px;"><span class="largenav">Khaosat.net</span></h1>
             </div>
-            {{/if}}
-
-            {{#unless userName}}
-            <a href="/login" class="loginBtn">Đăng nhập</a>
-            {{/unless}}
-         </ul>
-      </div>
-   </div>
-
-   <div class="header-nav">
-      <ul>
-         <li><a class="active" href="/">Trang chủ</a></li>
-         <li><a href="/rank">xếp hạng</a></li>
-         <li><a href="/create/form/company">tạo bài viết</a></li>
-         <li><a href="">tuyển dụng</a></li>
-         <li class="selectList">
-            <div class="selectBtn" style="cursor: pointer">
-               Lĩnh vực
-               <i style="margin: 0 4px" class="fa-solid fa-chevron-down"></i>
-               <ul class="selectItem">
-                  <li><a href="/company/sort/Nhà hàng">Nhà hàng</a></li>
-                  <li><a href="/company/sort/khách sạn">khách sạn</a></li>
-                  <li><a href="/company/sort/Công nghệ">công nghệ</a></li>
-               </ul>
+            <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+                <div class="row">
+                    <input class="flipkart-navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
+                    <button class="flipkart-navbar-button col-xs-1">
+                        <svg width="15px" height="15px">
+                            <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-         </li>
-         <li><a href="/contact">liên hệ</a></li>
-      </ul>
-   </div>
+            <div class="cart largenav col-sm-2">
+                <a href="./login" class="cart-button"> Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mySidenav" class="sidenav">
+    <div class="container" style="background-color: #2874f0;height: 48px; padding-top: 10px;">
+        <span class="sidenav-heading"></span>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+    
+    <a href="/login">Đăng nhập</a>
+    
+</div>
 </div>

@@ -1,7 +1,7 @@
 {
-  "name": "review-congty",
+  "name": "Khảo-sát-online",
   "version": "1.0.0",
-  "description": "review công ty nhóm 5",
+  "description": "khảo sát online nhóm 7",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --inspect ./src/index.js",
@@ -10,21 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LuuManhCuong/ReviewCongTy.git"
+    "url": "https://github.com/ThuanNguyenh/khaosatonline.git"
   },
   "keywords": [
-    "review",
-    "cong",
-    "ty",
+    "Khảo",
+    "sát",
+    "online",
     "nhóm",
-    "5"
+    "7"
   ],
-  "author": "Mạnh Cường, Minh Duy",
+  "author": "Thuận Nguyễn",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LuuManhCuong/ReviewCongTy/issues"
+    "url": "https://github.com/ThuanNguyenh/khaosatonline.git"
   },
-  "homepage": "https://github.com/LuuManhCuong/ReviewCongTy#readme",
+  "homepage": "https://github.com/ThuanNguyenh/khaosatonline.git",
   "dependencies": {
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
