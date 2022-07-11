@@ -86,3 +86,21 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.tickBtn{
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.submitBtn{
+  width: 160px;
+  height: 60px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(251, 251, 251);
+  background-color: rgb(91, 250, 128);
+  margin: 20px;
+  
+}

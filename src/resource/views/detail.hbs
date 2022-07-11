@@ -5,35 +5,44 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
-        <div class="row">
-            <div class="question">
-                <span><h2>Câu 1:</h2> </span>
-                <h2>Thuận yêu ai?</h2>
+        <h2>{{tieude}}</h2>
+        <form  method="POST" action="/submit/{{id}}?_method=PATCH">
+
+            {{#each question}}
+            <div class="row">
+                <div class="question">
+                    <span>
+                        Câu:
+                        <h2>{{sum @index 1}}</h2>
+                    </span>
+                    <h2>{{this.question}}?</h2>
+                </div>
+                <div class="boxes">
+
+                    <div class="answer">
+                        <input class="tickBtn" value="{{this.answer1}}" name="{{this.question}}" type="radio" id="{{this._id}}">
+                        <label >{{this.answer1}}</label>
+                    </div>
+
+                    <div class="answer">
+                        <input class="tickBtn" value="{{this.answer2}}" name="{{this.question}}" type="radio" id="{{this._id}}">
+                        <label >{{this.answer2}}</label>
+                    </div>
+
+                    <div class="answer">
+                        <input class="tickBtn" value="{{this.answer3}}" name="{{this.question}}" type="radio" id="box-3">
+                        <label >{{this.answer3}}</label>
+                    </div>
+
+                    <div class="answer">
+                        <input class="tickBtn" value="{{this.answer4}}" name="{{this.question}}" type="radio" id="box-4">
+                        <label>{{this.answer4}}</label>
+                    </div>
+                </div>
             </div>
-            <div class="boxes">
 
-                <div class="answer">
-                    <input name="cau1" type="radio" id="box-1">
-                    <label for="box-1">Lung</label>
-                </div>
-
-                <div class="answer">
-                    <input name="cau1" type="radio" id="box-2">
-                    <label for="box-2">Linh</label>
-                </div>
-
-                <div class="answer">
-                    <input name="cau1" type="radio" id="box-3">
-                    <label for="box-3">Lấp</label>
-                </div>
-
-                 <div class="answer">
-                    <input name="cau1" type="radio" id="box-4">
-                    <label for="box-4">Lánh</label>
-                </div>
-            </div>
-
-
-        </div>
+        {{/each}}
+        <button class="submitBtn" type="submit">gửi</button>
+        </form>
     </div>
 </div>

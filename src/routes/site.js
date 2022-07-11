@@ -4,7 +4,8 @@ const siteController = require("../controllers/SiteControllers")
 
 
 // chú ý tuyến đường đi từ trên xuống
-router.get('/detail', siteController.detail)
+router.get('/detail/:id', siteController.detail)
+router.patch('/submit/:id', siteController.submit)
 router.get('/login', siteController.login)
 router.post('/login', siteController.postLogin)
 router.post('/register', siteController.postRegister)

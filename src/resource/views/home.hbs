@@ -6,216 +6,29 @@
 
     <div class="container">
        
-            <div class="field">
-                <h2>KHẢO SÁT CÔNG NGHỆ</h2>
-            </div>
+                <h2>Khảo sát tất cả mọi thứ</h2>
             <div class="row">
+                {{#each tittle}} 
                 <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f17-zpc.zdn.vn/4920146596636252959/34c18814b2b571eb28a4.jpg);"
+                    <a class="linkItem" href="/detail/{{this._id}}">
+                        <div style="background-image: url({{this.thumbnail}});"
                         class="image-grid-cover">
-                        <a href="/detail" class="cover-wrapper">Bạn sử dụng điện thoại di động nhằm mục đích gì?</a>
+                        <h2 class=" tittle cover-wrapper">{{this.tittle}}</h2>
+                        <h2 class="field-lable">{{this.field}}</h2>
                         <div class="info-view-wrap">
                             <div class="infor-view">
-                                <span>100</span>
+                                <span>{{this.countQuestion}}</span>
                                 <i class="fa-solid fa-circle-question"></i>
                             </div>
                             <div class="infor-view">
-                                <span>100</span>
+                                <span>{{this.countRank}}</span>
                                 <i class="fa-solid fa-user-check"></i>
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f23-zpc.zdn.vn/6530761269557011121/68d7a20398a25bfc02b3.jpg);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Theo bạn ững dụng nào có chất lượng video call tốt nhất?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f10.photo.talk.zdn.vn/4066676805604572062/e93516e12c40ef1eb651.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="" class="cover-wrapper">Bạn thường gặp vấn đề gì nhất khi sửa chữa mãy tính ở của
-                            hàng?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f21-zpc.zdn.vn/5172189395357962746/62438583bf227c7c2533.jpg);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Theo bạn ứng dụng học online nào tiện lợi nhất?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f7.photo.talk.zdn.vn/5534079110150024207/7f173ddd077cc4229d6d.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Bạn dành bao nhiêu thời gian mỗi ngày để sử dụng điện
-                            thoại?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f21-zpc.zdn.vn/5172189395357962746/62438583bf227c7c2533.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Hãng máy tính nào bạn cho là đáng mua nhất hiện nay?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="field">
-                <h2>KHẢO SÁT DU LỊCH</h2>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f3.photo.talk.zdn.vn/5991605113049957111/bf5dd363ffc23c9c65d3.jpg;"
-                        class="image-grid-cover">
-                        <a href="#" class="cover-wrapper">Trong các đại danh dưới đây, bạn thấy bãi biển nào đẹp
-                            nhất?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f11.photo.talk.zdn.vn/2040788524621085776/398bcddbe17a22247b6b.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Bạn muốn trải nghiệm trò chơi cảm giác mạnh nào khi đến Đà
-                            Lạt?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f14.photo.talk.zdn.vn/8026421975592089327/a7271a7336d2f58cacc3.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Nếu có dịp đi Trung Quốc, bạn sẽ tham quan những địa điểm
-                            nào?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://image.stern.de/8205460/16x9-940-529/3c6ed305ea6e6f63c0454fda4dbc5d02/hx/pic-grand-calfornia-2018--9-.jpg	);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Sau đại dịch Covid-19 bạn sẽ lựa chọn đi du lịch bằng hình
-                            thức
-                            nào?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f4.photo.talk.zdn.vn/4469965260541900950/b7a569f54554860adf45.jpg);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Bạn thích đi du lịch ở thành phố nào nhất?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <div style="background-image: url(https://f9.photo.talk.zdn.vn/7580906726632870249/7e9e0fcf236ee030b97f.jpg);"
-                        class="entry-cover image-grid-cover has-image">
-                        <a href="#" class="cover-wrapper">Bạn thích nhất điểm gì khi đến du lịch Đà Nẵng?</a>
-                        <div class="info-view-wrap">
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-circle-question"></i>
-                            </div>
-                            <div class="infor-view">
-                                <span>100</span>
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
             </div>
     </div>
 </div>
