@@ -6,7 +6,11 @@ const question = new Schema({
     tittle: { type: String },
     idTittle: { type: String },
     field: { type: String },
-    answer: {type: Array}
+    answer1: { type: String },
+    answer2: { type: String },
+    answer3: { type: String },
+    answer4: { type: String },
+
 }, {
     timestamps: true,
 })

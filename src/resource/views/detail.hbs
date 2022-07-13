@@ -5,8 +5,8 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
-        <h2>{{tieude}}</h2>
-        <form  method="POST" action="/submit/{{id}}?_method=PATCH">
+        <h2>{{heading}}</h2>
+        <form method="POST" action="/submit/{{id}}?_method=PATCH">
 
             {{#each question}}
             <div class="row">
@@ -18,31 +18,36 @@
                     <h2>{{this.question}}?</h2>
                 </div>
                 <div class="boxes">
+                    <input class="tickBtn" value="{{this.question}}" name="question" type="checkbox" checked hidden>
 
                     <div class="answer">
-                        <input class="tickBtn" value="{{this.answer1}}" name="{{this.question}}" type="radio" id="{{this._id}}">
-                        <label >{{this.answer1}}</label>
+                        <input class="tickBtn" value="{{this.answer1}}" name="cau{{sum @index 1}}" type="radio"
+                            id="{{this._id}}">
+                        <label>{{this.answer1}}</label>
                     </div>
 
                     <div class="answer">
-                        <input class="tickBtn" value="{{this.answer2}}" name="{{this.question}}" type="radio" id="{{this._id}}">
-                        <label >{{this.answer2}}</label>
+                        <input class="tickBtn" value="{{this.answer2}}" name="cau{{sum @index 1}}" type="radio"
+                            id="{{this._id}}">
+                        <label>{{this.answer2}}</label>
                     </div>
 
                     <div class="answer">
-                        <input class="tickBtn" value="{{this.answer3}}" name="{{this.question}}" type="radio" id="box-3">
-                        <label >{{this.answer3}}</label>
+                        <input class="tickBtn" value="{{this.answer3}}" name="cau{{sum @index 1}}" type="radio"
+                            id="box-3">
+                        <label>{{this.answer3}}</label>
                     </div>
 
                     <div class="answer">
-                        <input class="tickBtn" value="{{this.answer4}}" name="{{this.question}}" type="radio" id="box-4">
+                        <input class="tickBtn" value="{{this.answer4}}" name="cau{{sum @index 1}}" type="radio"
+                            id="box-4">
                         <label>{{this.answer4}}</label>
                     </div>
                 </div>
             </div>
 
-        {{/each}}
-        <button class="submitBtn" type="submit">gửi</button>
+            {{/each}}
+            <button class="submitBtn" type="submit">gửi</button>
         </form>
     </div>
 </div>
