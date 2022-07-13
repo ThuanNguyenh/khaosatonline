@@ -8,39 +8,44 @@ const response = require("../models/response");
 class SiteControllers {
   // [GET] /
   home(req, res, next) {
-    let fields = Field.find().lean();
     let tittles = Tittle.find().lean();
-
-    Promise.all([fields, tittles])
-      .then(([field, tittle]) => {
-        res.render("home", { tittle });
+    let account = Account.find({_id: req.cookies.userId}).lean()
+    Promise.all([tittles, account])
+      .then(([tittle, user]) => {
+          res.render("home", { tittle });
       })
       .catch(next);
   }
 
   // [GET] /detail/:id
   detail(req, res, next) {
+
+    let userId = req.cookies.userId
     let questions = Question.find({ idTittle: req.params.id }).lean();
     let tittles = Tittle.find({ _id: req.params.id }).lean();
 
     Promise.all([questions, tittles])
       .then(([question, tittle]) => {
-        // console.log(question)
         var heading = tittle[0].tittle;
-        var id = tittle[0]._id;
+        var idTittle = tittle[0]._id;
+       if(userId){
         res.render("detail", {
           question,
           heading,
-          id,
+          userId,
+          idTittle,
         });
+       } else {
+        res.redirect("/login")
+       }
       })
       .catch(next);
   }
 
   // [PATCH] /submit/:id
   submit(req, res, next) {
+    // console.log("req: ", req.body)
     var newResponse = new Response(req.body);
-    // newAnswer.idUser = "123"
     newResponse.res = req.body;
     newResponse.save().then(() => {
       console.log(newResponse);
@@ -75,7 +80,6 @@ class SiteControllers {
     Account.findOne({ email: req.body.email })
       .lean()
       .then((user) => {
-        console.log(user)
         if (!user) {
           res.render("login", {
             err: "Tài khoản này không tồn tại vui lòng nhập lại",
@@ -97,6 +101,50 @@ class SiteControllers {
       })
       .catch(next);
   }
+
+
+  // [POST] /post/register
+  postRegister(req, res, next) {
+    let newAccount = new Account(req.body)
+    newAccount
+      .save()
+      .then(() => {
+        res.redirect("/login")
+      })
+      .catch(next)
+  }
+
+  // [GET] /logout
+  logout(req, res, next) {
+    res.clearCookie("userId");
+    res.redirect("/login")
+  }
+
+  // [GET] /create/question/:slug
+  createQuestion(req, res, next) {
+    console.log(req.params)
+    Tittle.find().lean()
+    .then((tittle) => {
+      console.log("title: ",tittle)
+      console.log("field: ", tittle[0].field)
+      res.render("createQuestion", {tittle})
+    })
+  }
+
+  // [POST] /post/tittle
+  postTittle(req, res, next) {
+    // console.log(req.body)
+    let newTittle = new Tittle(req.body)
+    newTittle.save()
+    .then(() => {
+      // console.log(newTittle)
+      res.redirect(`/create/question/${newTittle.slug}`)
+    })
+    .catch(next)
+  }
+
+  
+
 }
 
 module.exports = new SiteControllers();

@@ -4,7 +4,6 @@ const path = require('path')
 var cookieParser = require('cookie-parser')
 const bodyParser= require('body-parser')
 const multer = require('multer');
-var middlewares = require('./middlewares/authent')
 const { engine } = require('express-handlebars')
 const route = require("./routes")
 const database = require("./config/database")

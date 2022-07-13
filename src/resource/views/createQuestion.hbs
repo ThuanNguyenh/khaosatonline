@@ -1,0 +1,83 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{{#if tittle}} 
+  <h3>test: {{this.field}}</h3>
+
+  {{else}}
+  <h1>ko cos</h1>
+
+{{/if}}
+
+<form method="POST" action="/post/survey">
+  <div class="container-cr">
+    <div class="question-cr">
+      Câu 1:
+      <input type="text" name="question" placeholder="Nhập câu hỏi số 1">
+    </div>
+    <div class="row">
+      <div class="boxes">
+        <label for="box-1">đáp án 1:</label>
+        <input type="text" name="answer1" id="box-1">
+
+        <label for="box-2">đáp án 2:</label>
+        <input type="text" name="answer2" id="box-2">
+
+        <label for="box-3">đáp án 3:</label>
+        <input type="text" name="answer3" id="box-3">
+
+        <label for="box-3">đáp án 4:</label>
+        <input type="text" name="answer4" id="box-3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-cr">
+    <div class="question-cr">
+      Câu 2:
+      <input type="text" name="question" placeholder="Nhập câu hỏi số 1">
+    </div>
+    <div class="row">
+      <div class="boxes">
+        <label for="box-1">đáp án 1:</label>
+        <input type="text" name="answer1" id="box-1">
+
+        <label for="box-2">đáp án 2:</label>
+        <input type="text" name="answer2" id="box-2">
+
+        <label for="box-3">đáp án 3:</label>
+        <input type="text" name="answer3" id="box-3">
+
+        <label for="box-3">đáp án 4:</label>
+        <input type="text" name="answer4" id="box-3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-cr">
+    <div class="question-cr">
+      Câu 3:
+      <input type="text" name="question" placeholder="Nhập câu hỏi số 1">
+    </div>
+    <div class="row">
+      <div class="boxes">
+        <label for="box-1">đáp án 1:</label>
+        <input type="text" name="answer1" id="box-1">
+
+        <label for="box-2">đáp án 2:</label>
+        <input type="text" name="answer2" id="box-2">
+
+        <label for="box-3">đáp án 3:</label>
+        <input type="text" name="answer3" id="box-3">
+
+        <label for="box-3">đáp án 4:</label>
+        <input type="text" name="answer4" id="box-3">
+      </div>
+    </div>
+  </div>
+
+
+  <button class="submitBtn" type="submit">hoàn thành</button>
+
+</form>

@@ -5,14 +5,13 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
-       
-                <h2>Khảo sát tất cả mọi thứ</h2>
-            <div class="row">
-                {{#each tittle}} 
-                <div class="col-12 col-sm-6 col-md-4 image-grid-item">
-                    <a class="linkItem" href="/detail/{{this._id}}">
-                        <div style="background-image: url({{this.thumbnail}});"
-                        class="image-grid-cover">
+
+        <h2>Khảo sát tất cả mọi thứ</h2>
+        <div class="row">
+            {{#each tittle}}
+            <div class="col-12 col-sm-6 col-md-4 image-grid-item">
+                <a class="linkItem" href="/detail/{{this._id}}">
+                    <div style="background-image: url({{this.thumbnail}});" class="image-grid-cover">
                         <h2 class=" tittle cover-wrapper">{{this.tittle}}</h2>
                         <h2 class="field-lable">{{this.field}}</h2>
                         <div class="info-view-wrap">
@@ -26,9 +25,41 @@
                             </div>
                         </div>
                     </div>
-                    </a>
-                </div>
-                {{/each}}
+                </a>
             </div>
+            {{/each}}
+        </div>
+
+        <h2>Tạo khảo sát</h2>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 image-grid-item">
+                <form id="create-survey" class="linkItem" method="POST" action="/post/tittle">
+                    <div style="background-image: url(https://product.hstatic.net/1000238589/product/g-khao-sat-tren-google-bieu-mau-thumb_da4d3591f2bd4a3fb758b87ca46e139e_4116754e02f549afba3dd1f2f70f47fb.jpg);"
+                        class="image-grid-cover">
+                        <input type="text" name="thumbnail" placeholder="Nhập link background">
+                        <input style="color:red ;" class="tittle cover-wrapper" type="text" name="tittle" placeholder="Nhập tittle">
+                        <select name="field" class="custom-select">
+                            <option selected disabled>Chọn lĩnh vực</option>
+                            <option value="Công nghệ">Công nghệ</option>
+                            <option value="Tình yêu">Tình yêu</option>
+                            <option value="Du lịch">Du lịch</option>
+                        </select>
+
+                        <div class="info-view-wrap">
+                            <div class="infor-view">
+                                <span>{{this.countQuestion}}</span>
+                                <i class="fa-solid fa-circle-question"></i>
+                            </div>
+                            <div class="infor-view">
+                                <span>{{this.countRank}}</span>
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                      <button class="submitBtn" type="submit">Tạo khảo sát</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,45 +1,108 @@
 <div class="header">
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<div id="flipkart-navbar">
-    <div class="container">
-        <div class="row row1">
-            
-        </div>
-        <div class="row row2">
-            <a style="display: block; color: white" href="/">
-            <div class="col-sm-2">
-                <h2 style="margin:0px; float: right;"><span class="smallnav menu" onclick="openNav()">☰</span></h2>
-                <h1 style="margin:0px;"><span class="largenav">Khaosat.net</span></h1>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <div id="flipkart-navbar">
+        <div class="container">
+            <div class="row row1">
+
             </div>
-            </a>
-            <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
-                <div class="row">
-                    <input class="flipkart-navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
-                    <button class="flipkart-navbar-button col-xs-1">
-                        <svg width="15px" height="15px">
-                            <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-                        </svg>
-                    </button>
+            <div class="row row2">
+                <a style="display: block; color: white" href="/">
+                    <div class="col-sm-2">
+                        <h2 style="margin:0px; float: right;"><span class="smallnav menu" onclick="openNav()">☰</span>
+                        </h2>
+                        <h1 style="margin:0px;"><span class="largenav">Khaosat.net</span></h1>
+                    </div>
+                </a>
+                <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+                    <div class="row">
+                        <input class="flipkart-navbar-input col-xs-11" type=""
+                            placeholder="Search for Products, Brands and more" name="">
+                        <button class="flipkart-navbar-button col-xs-1">
+                            <svg width="15px" height="15px">
+                                <path
+                                    d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 ">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="cart largenav col-sm-2">
-                <a href="/login" class="cart-button"> Đăng nhập</a>
+
+                {{#if userName}}
+                <div class="dropdown">
+                    <a class=" account-item btn btn-secondary dropdown-toggle" href="#" role="button"
+                        id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        {{#if avatar}}
+                        <img class="avarta" src="{{avatar}}" alt="avarta">
+                        {{else}}
+                        <img class="avarta" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="avarta">
+                        {{/if}}
+                        <h4 class="user-name">{{userName}}</h4>
+                    </a>
+
+                    <ul style="width: 100%" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/profile/{{slug}}">Hồ sơ</a></li>
+                        <li><a class="dropdown-item" href="/me/stored/{{slug}}">Bài viết của tôi</a></li>
+                        <li><a href="/logout" class="dropdown-item">Đăng xuất</a></li>
+                    </ul>
+                </div>
+                {{else}}
+
+                <div class="cart largenav col-sm-2">
+                    <a href="/login" class="cart-button"> Đăng nhập</a>
+                </div>
+
+                {{/if}}
+
             </div>
         </div>
     </div>
-</div>
-<div id="mySidenav" class="sidenav">
-    <div class="container" style="background-color: #2874f0;height: 48px; padding-top: 10px;">
-        <span class="sidenav-heading"></span>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div id="mySidenav" class="sidenav">
+        <div class="container" style="background-color: #2874f0;height: 48px; padding-top: 10px;">
+            <span class="sidenav-heading"></span>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        </div>
+
+        <a href="/login">Đăng nhập</a>
     </div>
-    
-    <a href="/login">Đăng nhập</a>
-    
-</div>
+    <nav class="navbar navbar-wrap navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#create-survey">Tạo khảo sát</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Lĩnh vực
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Công nghệ</a></li>
+                            <li><a class="dropdown-item" href="#">Du lịch</a></li>
+                            <li><a class="dropdown-item" href="#">Du lịch</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                {{!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> --}}
+            </div>
+        </div>
+    </nav>
 </div>

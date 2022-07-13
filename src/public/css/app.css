@@ -21,7 +21,12 @@ html {
   background: linear-gradient(red, var(--primary-color));
 }
 
-
+.container-main{
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+}
 
 #flipkart-navbar {
   background-color: #2874f0;
@@ -114,7 +119,6 @@ html {
 
 .dropdown {
   position: relative;
-  display: inline-block;
   margin-bottom: 0px;
 }
 
@@ -830,4 +834,21 @@ a:hover {
   font-weight: 600;
   color: rgb(252, 252, 252);
   text-transform: capitalize;
+}
+
+.avarta{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.question-cr{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.boxes-cr label{
+  color: white;
 }
