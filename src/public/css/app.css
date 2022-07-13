@@ -117,36 +117,6 @@ html {
   font-size: 12px;
 }
 
-.dropdown {
-  position: relative;
-  margin-bottom: 0px;
-}
-
-.dropdown:hover {
-  background-color: #fff;
-}
-
-.dropdown:hover .links {
-  color: #000;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  display: none;
-  background-color: #fff;
-  color: #333;
-  left: 0px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: 0 4px 8px -3px #555454;
-  margin: 0;
-  padding: 0px;
-}
 
 .links {
   color: #fff;
@@ -202,6 +172,55 @@ html {
     margin: 0px;
   }
 }
+
+/* header */
+.header{
+  margin-top: 30px;
+}
+.logo{
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: -70px;
+}
+.logo:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+.dropdown {
+  position: relative;
+  margin-bottom: 0px;
+  margin-left: 40px;
+}
+
+.dropdown:hover {
+  background-color: #fff;
+  border-radius: 5px;
+
+}
+
+.dropdown:hover .links {
+  color: #000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  display: none;
+  background-color: #fff;
+  color: #333;
+  left: 0px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 4px 8px -3px #555454;
+  margin: 0;
+  padding: 0px;
+}
+
 
 /* login */
 /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
@@ -657,17 +676,18 @@ section .section-title {
 
 #footer {
   background: #2469d9 !important;
-  font-size: 13px;
+  font-size: 14px;
 }
 
-#footer h5 {
+#footer h3 {
   padding-left: 10px;
   border-left: 3px solid #eeeeee;
   padding-bottom: 6px;
   margin-bottom: 20px;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 500;
 }
+
 
 #footer a {
   color: #ffffff;
@@ -728,7 +748,7 @@ section .section-title {
 }
 
 @media (max-width:767px) {
-  #footer h5 {
+  #footer h3 {
     padding-left: 0;
     border-left: transparent;
     padding-bottom: 0px;
@@ -741,6 +761,7 @@ section .section-title {
 .home {
   min-height: 100vh;
   margin-bottom: 50px;
+  padding-top: 30px;
 }
 
 .field {
@@ -834,6 +855,7 @@ a:hover {
   font-weight: 600;
   color: rgb(252, 252, 252);
   text-transform: capitalize;
+
 }
 
 .avarta{
@@ -851,4 +873,31 @@ a:hover {
 
 .boxes-cr label{
   color: white;
+}
+
+.taoks{
+  margin-top: 30px;
+}
+/* tạo khảo sát */
+.submitBtn{
+  border-radius: 10px;
+  color: #000;
+}
+/* createQuestion */
+.container-cr{
+  font-size: 15px;
+}
+.question-cr{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.boxes label{
+  color: #ffffff;
+}
+.question-cr input{
+  width: 50%;
+  margin-left: 10px;
+}
+.submitBtn:hover{
+  border: blue 3px solid;
 }

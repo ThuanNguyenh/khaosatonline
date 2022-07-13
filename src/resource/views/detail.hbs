@@ -6,6 +6,7 @@
 
     <div class="container">
         <h2>{{heading}}</h2>
+    
         <form method="POST" action="/submit/{{idTittle}}?_method=PATCH">
             {{#if userId}}
             <input class="tickBtn" value="{{userId}}" name="idUser" type="text" hidden>
@@ -13,9 +14,8 @@
             {{#each question}}
             <div class="row">
                 <div class="question">
-                    <span>
-                        Câu:
-                        <h2>{{sum @index 1}}</h2>
+                    <span>                        
+                        <h2>Câu {{sum @index 1}}: </h2>
                     </span>
                     <h2>{{this.question}}?</h2>
                 </div>
