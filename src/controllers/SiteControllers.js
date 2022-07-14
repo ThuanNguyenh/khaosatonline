@@ -9,18 +9,17 @@ class SiteControllers {
   // [GET] /
   home(req, res, next) {
     let tittles = Tittle.find().lean();
-    let account = Account.find({_id: req.cookies.userId}).lean()
+    let account = Account.find({ _id: req.cookies.userId }).lean();
     Promise.all([tittles, account])
       .then(([tittle, user]) => {
-          res.render("home", { tittle });
+        res.render("home", { tittle, user });
       })
       .catch(next);
   }
 
   // [GET] /detail/:id
   detail(req, res, next) {
-
-    let userId = req.cookies.userId
+    let userId = req.cookies.userId;
     let questions = Question.find({ idTittle: req.params.id }).lean();
     let tittles = Tittle.find({ _id: req.params.id }).lean();
 
@@ -28,29 +27,36 @@ class SiteControllers {
       .then(([question, tittle]) => {
         var heading = tittle[0].tittle;
         var idTittle = tittle[0]._id;
-       if(userId){
-        res.render("detail", {
-          question,
-          heading,
-          userId,
-          idTittle,
-        });
-       } else {
-        res.redirect("/login")
-       }
+        if (userId) {
+          res.render("detail", {
+            question,
+            heading,
+            userId,
+            idTittle,
+          });
+        } else {
+          res.redirect("/login");
+        }
       })
       .catch(next);
   }
 
   // [PATCH] /submit/:id
   submit(req, res, next) {
-    // console.log("req: ", req.body)
     var newResponse = new Response(req.body);
     newResponse.res = req.body;
-    newResponse.save().then(() => {
-      console.log(newResponse);
-      res.redirect("back");
-    });
+    
+    // var lengNewRes = newResponse.question.length;
+    // var group = {};
+    // for (var i = 0; i < lengNewRes; i++) {
+    //   group[newResponse.question[0]] = newResponse.res.cau1;
+    //   group[newResponse.question[1]] = newResponse.res.cau2;
+    //   group[newResponse.question[2]] = newResponse.res.cau3;
+    // }
+    // newResponse.ans = group
+
+    newResponse.save().
+    then
   }
 
   // get
@@ -89,7 +95,10 @@ class SiteControllers {
         }
 
         if (user.password != req.body.password) {
-          res.render("login", { err: "Mật khẩu không đúng vui lòng nhập lại", layout: false });
+          res.render("login", {
+            err: "Mật khẩu không đúng vui lòng nhập lại",
+            layout: false,
+          });
           return;
         }
 
@@ -102,49 +111,47 @@ class SiteControllers {
       .catch(next);
   }
 
-
   // [POST] /post/register
   postRegister(req, res, next) {
-    let newAccount = new Account(req.body)
+    let newAccount = new Account(req.body);
     newAccount
       .save()
       .then(() => {
-        res.redirect("/login")
+        res.redirect("/login");
       })
-      .catch(next)
+      .catch(next);
   }
 
   // [GET] /logout
   logout(req, res, next) {
     res.clearCookie("userId");
-    res.redirect("/login")
+    res.redirect("/login");
   }
 
   // [GET] /create/question/:slug
   createQuestion(req, res, next) {
-    console.log(req.params)
-    Tittle.find().lean()
-    .then((tittle) => {
-      console.log("title: ",tittle)
-      console.log("field: ", tittle[0].field)
-      res.render("createQuestion", {tittle})
-    })
+    console.log(req.params);
+    Tittle.find()
+      .lean()
+      .then((tittle) => {
+        // console.log("title: ",tittle)
+        // console.log("field: ", tittle[0].field)
+        res.render("createQuestion", { tittle });
+      });
   }
 
   // [POST] /post/tittle
   postTittle(req, res, next) {
     // console.log(req.body)
-    let newTittle = new Tittle(req.body)
-    newTittle.save()
-    .then(() => {
-      // console.log(newTittle)
-      res.redirect(`/create/question/${newTittle.slug}`)
-    })
-    .catch(next)
+    let newTittle = new Tittle(req.body);
+    newTittle
+      .save()
+      .then(() => {
+        // console.log(newTittle)
+        res.redirect(`/create/question/${newTittle.slug}`);
+      })
+      .catch(next);
   }
-
-  
-
 }
 
 module.exports = new SiteControllers();
