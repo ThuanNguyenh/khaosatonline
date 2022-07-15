@@ -1,8 +1,27 @@
 <div class="res">
-    <h2>câu trả lời của bạn</h2>
-    {{#each res}}
-    <h3>
-        {{this}}
-    </h3>
-    {{/each}}
+    <h3 style="color: rgb(0, 221, 255);">Cảm ơn bạn đã khảo sát</h3>
+    <h3>Câu trả lời của: {{me.userName}}</h3>
+
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">stt</th>
+                <th scope="col">Câu hỏi</th>
+                <th scope="col">Câu trả lời của bạn</th>
+                <th scope="col">Số người trả lời giống bạn</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each group}}
+            {{!-- <h1>Key: {{@key}} Value = {{this}}</h1> --}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{@key}}</td>
+                <td>{{this}}</td>
+                <td>{{random 3}} người</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
 </div>

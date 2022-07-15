@@ -1,17 +1,11 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="createQuestion.css">
 
-{{#if tittle}} 
-  <h3>test: {{this.field}}</h3>
-
-  {{else}}
-  <h1>ko có</h1>
-
-{{/if}}
 
 <form method="POST" action="/post/survey">
+  <h2>{{tittle.tittle}}</h2>
   <div class="container-cr">
     <div class="question-cr">
       Câu 1:

@@ -21,18 +21,17 @@ class SiteControllers {
   detail(req, res, next) {
     let userId = req.cookies.userId;
     let questions = Question.find({ idTittle: req.params.id }).lean();
-    let tittles = Tittle.find({ _id: req.params.id }).lean();
+    let tittles = Tittle.findOne({ _id: req.params.id }).lean();
 
     Promise.all([questions, tittles])
       .then(([question, tittle]) => {
-        var heading = tittle[0].tittle;
-        var idTittle = tittle[0]._id;
+        // console.log(tittle)
+        // console.log(question)
         if (userId) {
           res.render("detail", {
             question,
-            heading,
             userId,
-            idTittle,
+            tittle
           });
         } else {
           res.redirect("/login");
@@ -41,22 +40,46 @@ class SiteControllers {
       .catch(next);
   }
 
+  // [GET] /res/:idQuestion
+  myAnswer(req, res, next) {
+    // console.log(req.params)
+    let findMe = Account.findOne({ _id: req.cookies.userId }).lean();
+    let findAns = Response.findOne({ _id: req.params.id }).lean();
+    let findAllAns =  Response.find({ _id: req.params.id }).lean()
+    
+    Promise.all([findMe, findAns, findAllAns])
+    .then(([me, answer, allAnswer]) => {
+      // console.log(allAnswer)
+      
+
+      var lengNewRes = answer.question.length;
+      var group = {};
+      for (var i = 0; i < lengNewRes; i++) {
+        group[answer.question[0]] = answer.res.cau1;
+        group[answer.question[1]] = answer.res.cau2;
+        group[answer.question[2]] = answer.res.cau3;
+      }
+
+      // allAnswer.reduce((countCau1, answer) => {
+      //   let arrCau1 = allAnswer.filter((e) => e.res.cau1 == answer.res.cau1)
+      //   console.log("arr: ", arrCau1.length)
+      // }, [])
+
+      // console.log("gr: ", group)
+      res.render("res", { me, answer, group });
+    })
+    .catch(next)
+  }
+
   // [PATCH] /submit/:id
   submit(req, res, next) {
     var newResponse = new Response(req.body);
     newResponse.res = req.body;
-    
-    // var lengNewRes = newResponse.question.length;
-    // var group = {};
-    // for (var i = 0; i < lengNewRes; i++) {
-    //   group[newResponse.question[0]] = newResponse.res.cau1;
-    //   group[newResponse.question[1]] = newResponse.res.cau2;
-    //   group[newResponse.question[2]] = newResponse.res.cau3;
-    // }
-    // newResponse.ans = group
-
-    newResponse.save().
-    then
+    // console.log(newResponse)
+    newResponse.save().then(() => {
+      // res.send(newResponse)
+      res.redirect(`/res/${newResponse._id}`);
+    });
   }
 
   // get
@@ -130,14 +153,13 @@ class SiteControllers {
 
   // [GET] /create/question/:slug
   createQuestion(req, res, next) {
-    console.log(req.params);
-    Tittle.find()
+    Tittle.findOne({ _id: req.params.id })
       .lean()
       .then((tittle) => {
-        // console.log("title: ",tittle)
-        // console.log("field: ", tittle[0].field)
+        // console.log(tittle)
         res.render("createQuestion", { tittle });
-      });
+      })
+      .catch(next);
   }
 
   // [POST] /post/tittle
@@ -148,7 +170,7 @@ class SiteControllers {
       .save()
       .then(() => {
         // console.log(newTittle)
-        res.redirect(`/create/question/${newTittle.slug}`);
+        res.redirect(`/create/question/${newTittle._id}`);
       })
       .catch(next);
   }

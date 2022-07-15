@@ -5,7 +5,8 @@ const mdw = require("../middlewares/authent")
 
 
 // chú ý tuyến đường đi từ trên xuống
-router.get('/create/question/:slug', siteController.createQuestion)
+router.get('/res/:id', siteController.myAnswer)
+router.get('/create/question/:id', siteController.createQuestion)
 router.post('/post/tittle', siteController.postTittle)
 router.get('/detail/:id', siteController.detail)
 router.patch('/submit/:id', siteController.submit)

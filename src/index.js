@@ -29,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('hbs', engine({
   extname: '.hbs',
   helpers: {
-    sum: (a,b) => a+b, 
+    sum: (a,b) => a+b,
+    random: (a) => a * (Math.floor(Math.random() * 10)), 
   }
 }
 ));

@@ -5,12 +5,17 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
-        <h2>{{heading}}</h2>
+        <h2>{{tittle.tittle}}</h2>
     
-        <form method="POST" action="/submit/{{idTittle}}?_method=PATCH">
+        <form method="POST" action="/submit/{{tittle._id}}?_method=PATCH">
             {{#if userId}}
             <input class="tickBtn" value="{{userId}}" name="idUser" type="text" hidden>
             {{/if}}
+
+            {{#if idQuestion}}
+            <input class="tickBtn" value="{{idQuestion}}" name="idQuestion" type="text" hidden>
+            {{/if}}
+
             {{#each question}}
             <div class="row">
                 <div class="question">

@@ -901,3 +901,7 @@ a:hover {
 .submitBtn:hover{
   border: blue 3px solid;
 }
+
+.bg-light{
+  box-shadow: 0 0 1px 1px black;
+}
