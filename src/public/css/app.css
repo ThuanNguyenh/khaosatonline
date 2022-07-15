@@ -175,13 +175,16 @@ html {
 
 /* header */
 .header{
-  margin-top: 30px;
+  margin: 0px;
+}
+.flipkart-navbar-search{
+  margin-left: -200px;
 }
 .logo{
   font-size: 20px;
   color: #ffffff;
   font-weight: bold;
-  margin-left: -70px;
+  margin-left: -560px;
 }
 .logo:hover{
   text-decoration: none;
@@ -190,7 +193,23 @@ html {
 .dropdown {
   position: relative;
   margin-bottom: 0px;
-  margin-left: 40px;
+  margin-left: 90px;
+  margin-right: -150px;
+}
+.dropdown .avarta{
+  float: left;
+  margin-top: -7px;
+  margin-left: 8px;
+}
+.khung-login{
+  float: left;
+  margin-left: -10px;
+}
+
+.dropdown a{
+  width: 200px;
+  height: 46px;
+  padding-top: 15px;
 }
 
 .dropdown:hover {
@@ -211,15 +230,16 @@ html {
   position: absolute;
   top: 100%;
   display: none;
-  background-color: #fff;
-  color: #333;
+  background: #fff;
+  color: rgb(11, 11, 11);
   left: 0px;
   border: 0;
   border-radius: 0;
-  box-shadow: 0 4px 8px -3px #555454;
+  box-shadow: 0 4px 8px -3px #2b2a2a;
   margin: 0;
   padding: 0px;
 }
+
 
 
 /* login */
@@ -760,7 +780,7 @@ section .section-title {
 /* home */
 .home {
   min-height: 100vh;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   padding-top: 30px;
 }
 
@@ -902,6 +922,3 @@ a:hover {
   border: blue 3px solid;
 }
 
-.bg-light{
-  box-shadow: 0 0 1px 1px black;
-}

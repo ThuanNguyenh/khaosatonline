@@ -15,10 +15,10 @@
                     <div class="col-sm-2">
                         <h2 style="margin:0px; float: right;"><span class="smallnav menu" onclick="openNav()">☰</span>
                         </h2>
-                        <a  class="logo"  href="/">
+                        <a class="logo" href="/">
                             <i style="font-size: 50px;padding-right: 5px; color: #ffffff"
                                 class="fa-solid fa-square-poll-vertical"></i><span>Khaosat.net</span>
-                            
+
                         </a>
                     </div>
                 </a>
@@ -33,23 +33,26 @@
                 </div>
 
                 {{#if userName}}
-                <div id="header-info" class="dropdown">
-                    <a class=" account-item btn btn-secondary dropdown-toggle" href="#" role="button"
-                        id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="khung-login">
+                    <div id="header-info" class="dropdown">
+                        <a class=" account-item btn btn-secondary dropdown-toggle" href="#" role="button"
+                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 
-                        {{#if avatar}}
-                        <img class="avarta" src="{{avatar}}" alt="avarta">
-                        {{else}}
-                        <img class="avarta" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="avarta">
-                        {{/if}}
-                        <h4 class="user-name">{{userName}}</h4>
-                    </a>
+                            {{#if avatar}}
+                            <img class="avarta" src="{{avatar}}" alt="avarta">
+                            {{else}}
+                            <img class="avarta" src="https://png.pngtree.com/png-clipart/20210423/ourmid/pngtree-abstract-character-avatar-round-cartoon-instagram-icon-png-image_3232089.png" alt="avarta">
+                            {{/if}}
+                            <h4 class="user-name">{{userName}}</h4>
+                        </a>
 
-                    <ul style="width: 100%; font-size: 13px;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/profile/{{slug}}">Hồ sơ</a></li>
-                        <li><a class="dropdown-item" href="/me/stored/{{slug}}">Bài viết của tôi</a></li>
-                        <li><a href="/logout" class="dropdown-item">Đăng xuất</a></li>
-                    </ul>
+                        <ul style="width: 100%; font-size: 13px;" class="dropdown-menu"
+                            aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/profile/{{slug}}">Hồ sơ</a></li>
+                            <li><a class="dropdown-item" href="/me/stored/{{slug}}">Bài viết của tôi</a></li>
+                            <li><a href="/logout" class="dropdown-item">Đăng xuất</a></li>
+                        </ul>
+                    </div>
                 </div>
                 {{else}}
 
@@ -70,39 +73,41 @@
 
         {{!-- <a href="/login">Đăng nhập</a> --}}
     </div>
-    <nav class="navbar navbar-wrap navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div style="margin-left: 8.5%" class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul style="font-size: 15px;" class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="padding-left: 40px;" class="nav-link" href="/">Tạo khảo sát</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Lĩnh vực
-                        </a>
-                        <ul style="font-size: 15px;" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Công nghệ</a></li>
-                            <li><a class="dropdown-item" href="#">Du lịch</a></li>
-                            <li><a class="dropdown-item" href="#">Du lịch</a></li>
+    <div class="khung-nav-2">
+        <nav  class="navbar navbar-wrap navbar-expand-lg bg-light">
+            <div  class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style="margin-left: 3%" class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul style="font-size: 15px;" class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li style="margin-left: 30px; margin-right:-80px" class="nav-item">
+                            <a style="padding-left: 40px;" class="nav-link" href="/">Tạo khảo sát</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Lĩnh vực
+                            </a>
+                            <ul style="font-size: 15px;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Công nghệ</a></li>
+                                <li><a class="dropdown-item" href="#">Du lịch</a></li>
+                                <li><a class="dropdown-item" href="#">Du lịch</a></li>
 
-                        </ul>
-                    </li>
-                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
                 {{!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form> --}}
             </div>
-        </div>
+    </div>
     </nav>
 </div>
